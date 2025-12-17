@@ -1,6 +1,6 @@
 ARG RUBY_VERSION=3.4.7
 ARG DEFAULT_RUBY_VERSION=3.4.7
-ENV DEFAULT_RUBY_VERSION=3.4.7
+
 FROM ruby:$RUBY_VERSION-slim as base
 
 # Rack app lives here
@@ -13,8 +13,7 @@ RUN gem update --system --no-document && \
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
-ARG DEFAULT_RUBY_VERSION=3.4.7
-ENV DEFAULT_RUBY_VERSION=3.4.7
+
 # Install packages needed to build gems
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential \
@@ -24,13 +23,14 @@ RUN apt-get update -qq && \
 
 # Install application gems
 COPY Gemfile* .
-RUN bundle install
+# Ensure Gemfile ruby version is set correctly
+RUN sed -i 's/^ruby.*/ruby 3.4.7/' Gemfile && \
+    bundle install
 
 
 # Final stage for app image
 FROM base
-ARG DEFAULT_RUBY_VERSION=3.4.7
-ENV DEFAULT_RUBY_VERSION=3.4.7
+
 
 # Run and own the application files as a non-root user for security testing cicd
 RUN useradd ruby --home /app --shell /bin/bash
