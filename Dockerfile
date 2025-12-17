@@ -28,6 +28,7 @@ RUN bundle install
 
 # Final stage for app image
 FROM base
+ENV DEFAULT_RUBY_VERSION=3.4.7
 
 # Run and own the application files as a non-root user for security testing cicd
 RUN useradd ruby --home /app --shell /bin/bash
