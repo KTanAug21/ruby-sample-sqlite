@@ -27,7 +27,7 @@ RUN bundle install
 # Final stage for app image
 FROM base
 
-# Run and own the application files as a non-root user for security
+# Run and own the application files as a non-root user for security testing cicd
 RUN useradd ruby --home /app --shell /bin/bash
 USER ruby:ruby
 
