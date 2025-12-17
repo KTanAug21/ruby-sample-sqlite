@@ -14,8 +14,12 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential
+    apt-get install --no-install-recommends -y \
+      build-essential \
+      pkg-config \
+      libsqlite3-dev
 
+    
 # Install application gems
 COPY Gemfile* .
 RUN bundle install
