@@ -6,6 +6,8 @@
 app = 'ruby-sqlite-app-restless-water-2710'
 primary_region = 'cdg'
 
+[build]
+  dockerfile = "Dockerfile"
 
 [http_service]
   internal_port = 8080
