@@ -16,3 +16,4 @@ jobs:
       - run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          DEFAULT_RUBY_VERSION: "3.4.7"
