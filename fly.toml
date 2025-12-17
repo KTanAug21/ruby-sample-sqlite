@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for ruby-sqlite-app on 2025-12-17T12:50:32+03:00
+# fly.toml app configuration file generated for ruby-sqlite-app-restless-water-2710 on 2025-12-17T13:40:16+03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'ruby-sqlite-app'
+app = 'ruby-sqlite-app-restless-water-2710'
 primary_region = 'cdg'
 
 [build]
@@ -17,6 +17,6 @@ primary_region = 'cdg'
   processes = ['app']
 
 [[vm]]
-  memory = '2gb'
+  memory = '1gb'
   cpus = 1
-  memory_mb = 2048
+  memory_mb = 1024
