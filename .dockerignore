@@ -1,0 +1,7 @@
+# flyctl launch added from .gitignore
+.bundle
+vendor
+data/*.sqlite3
+**/.DS_Store
+
+fly.toml

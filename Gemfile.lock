@@ -1,0 +1,36 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.3.0)
+    mini_portile2 (2.8.9)
+    mustermann (3.0.4)
+      ruby2_keywords (~> 0.0.1)
+    rack (2.2.21)
+    rack-protection (3.2.0)
+      base64 (>= 0.1.0)
+      rack (~> 2.2, >= 2.2.4)
+    ruby2_keywords (0.0.5)
+    sinatra (3.2.0)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.2.0)
+      tilt (~> 2.0)
+    sqlite3 (1.7.3)
+      mini_portile2 (~> 2.8.0)
+    tilt (2.6.1)
+    webrick (1.9.2)
+
+PLATFORMS
+  arm64-darwin-24
+  ruby
+
+DEPENDENCIES
+  sinatra (~> 3.0)
+  sqlite3 (~> 1.7)
+  webrick (~> 1.8)
+
+RUBY VERSION
+   ruby 3.4.7p58
+
+BUNDLED WITH
+   2.6.9
